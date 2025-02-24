@@ -1,0 +1,27 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "./util/spinner.scss";
+@import "./util/icons.scss";
+@import "./util/fonts.scss";
+@import './util/spinner.scss';
+.deneme{
+  background-image: url(./assets/tuvlogo-white.svg);
+  background-image: url(./assets/tuvlogo.svg);
+
+}
+:root{
+  --tvclr:#001ed2;
+}
+*{
+  box-sizing: border-box;
+}
+html {
+  font-family: "Roboto", "arial";
+  font-size: 16px;
+}
+
+input:focus{
+  outline: none ;
+}
