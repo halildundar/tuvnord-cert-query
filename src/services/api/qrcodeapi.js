@@ -6,7 +6,6 @@ export let QrCodeArea = (router) => {
 
 const GetQR = async (req, res) => {
   const { url } = req.query;
-
   const code = await QRCode.toDataURL(url);
   res.render('pages/home',{layout:"qrcode",imgData:code})
 };
