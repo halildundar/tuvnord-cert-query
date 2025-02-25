@@ -112,7 +112,7 @@ $(document).ready(function () {
   const CertQ = urlParams.get("cno");
   const LegQ = urlParams.get("leg");
   // window.location.search = '';
-  window.history.replaceState(null, '', window.location.pathname);
+  // window.history.replaceState(null, '', window.location.pathname);
   if (!!CertQ && !!LegQ) {
     $("#search-dropdown").val(CertQ.toUpperCase());
     selectedRegulation = regulations.find((item) => item.label == LegQ);
