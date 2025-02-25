@@ -64,45 +64,61 @@ $(document).ready(function () {
       //Bu alan Boş olamaz
       return;
     }
-    console.log(selectedRegulation);
-    console.log($("#search-dropdown").val());
     $.ajax({
       type: "POST",
       url: "/api/cq",
-      data:{
+      data: {
         legislation: selectedRegulation.label,
         cert_no: $("#search-dropdown").val(),
       },
       dataType: "json",
       success: function (response) {
         console.log("response", response);
-        const{msg} = response;
-        $('#docVer').removeClass('hidden');
-        $('#articArea').addClass('hidden');
-        if(msg == 'Finded'){
-          $('#docVer table').removeClass('hidden');
-          $('#noCert').addClass('hidden');
-          $("#docVer table tbody").html('');
-          delete response['msg'];
-          $.map(response,function(val,key){
-            if(key !== 'id'){
-              let Keys = key.split('_').map((item)=>{
-                return String(item).charAt(0).toUpperCase() + String(item).slice(1)
+        const { msg } = response;
+        $("#docVer").removeClass("hidden");
+        $("#articArea").addClass("hidden");
+        if (msg == "Finded") {
+          $("#docVer table").removeClass("hidden");
+          $("#noCert").addClass("hidden");
+          $("#docVer table tbody").html("");
+          delete response["msg"];
+          $.map(response, function (val, key) {
+            if (key !== "id") {
+              let Keys = key.split("_").map((item) => {
+                return (
+                  String(item).charAt(0).toUpperCase() + String(item).slice(1)
+                );
               });
-              newKey = '';
+              newKey = "";
               for (let I = 0; I < Keys.length; I++) {
-                newKey += I > 0 ? ' ' + Keys[I]: Keys[I]; 
+                newKey += I > 0 ? " " + Keys[I] : Keys[I];
               }
-              $("#docVer table tbody").append($('<tr>').append($('<td>',{text:`${newKey}`})).append($('<td>',{text:`${val}`})));
+              $("#docVer table tbody").append(
+                $("<tr>")
+                  .append($("<td>", { text: `${newKey}` }))
+                  .append($("<td>", { text: `${val}` }))
+              );
             }
-      
-          })
-        }else{
-          $('#docVer table').addClass('hidden');
-          $('#noCert').removeClass('hidden');
+          });
+        } else {
+          $("#docVer table").addClass("hidden");
+          $("#noCert").removeClass("hidden");
         }
-
       },
     });
   });
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const CertQ = urlParams.get("cno");
+  const LegQ = urlParams.get("leg");
+  // window.location.search = '';
+  window.history.replaceState(null, '', window.location.pathname);
+  if (!!CertQ && !!LegQ) {
+    $("#search-dropdown").val(CertQ.toUpperCase());
+    selectedRegulation = regulations.find((item) => item.label == LegQ);
+    if (!!selectedRegulation) {
+      $("#dropdown-button .txt-area").text(selectedRegulation.label);
+      $("#search-btn").click();
+    }
+  }
 });
