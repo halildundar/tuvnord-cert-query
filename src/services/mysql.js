@@ -6,8 +6,10 @@ let dbConfig = {
   connectionLimit: 10, // default 10
   host: "localhost",
   database: "tuvnord",
-  user: "tuvnrd",
-  password: "tuvnrd56*21",
+  // user: "tuvnrd",
+  // password: "tuvnrd56*21",
+  user: "root",
+  password: "",
   port:3306,
   connectionLimit: 20,
   idleTimeoutMillis: 30000,
