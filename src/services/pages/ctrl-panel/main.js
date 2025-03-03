@@ -32,17 +32,6 @@ export let CtrlPanelRoutes = (root, router) => {
       layout: "ctrl-panel",
     });
   });
-  // router.get(`${root}/*`, checkLoggedIn, async (req, res) => {
-  //   res.render("pages/ctrl-panel/main.hbs", {
-  //     sitename: "Ctrlpanel | Artıdoksan",
-  //     page: "Ctrlpanel | Artıdoksan",
-  //     title: "Ctrlpanel | Artıdoksan Page",
-  //     url: `https://artidoksancert.com/ctrl-panel/`,
-  //     siteurl: `https://artidoksancert.com/ctrl-panel/`,
-  //     publicdata: "/ctrl-panel/main",
-  //     layout: "ctrl-panel",
-  //   });
-  // });
   router.get(`${root}/*`,checkLoggedIn,  async (req, res) => {
     res.render("pages/ctrl-panel/main.hbs", {
       sitename: "Ctrlpanel | Artıdoksan",
