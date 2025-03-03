@@ -218,6 +218,7 @@ const UsersAreaJS = () => {
 
 const CertQueryAreaJS = () => {
   let selectedCert = null;
+  const sitename = "https://nervous-herschel.89-250-72-218.plesk.page/";//https://nervous-herschel.89-250-72-218.plesk.page/, "http://localhost:3000/"
   const pathname = window.location.pathname;
   const GetQR = async (text,name) => {
     const resp = await $.ajax({
@@ -231,12 +232,12 @@ const CertQueryAreaJS = () => {
     return resp;
   };
   const CertificateSorguImgArea = async () => {
-    const data = await GetQR("http://localhost:3000/certquery/",'cert_qeury_url');
+    const data = await GetQR(sitename + "certquery/",'cert_qeury_url');
     $(".certqueryqr img").remove();
     $(".certqueryqr").append(data['imgEl']);
   };
   const SelectedCertQr = async (cert_id)=>{
-    const data = await GetQR("http://localhost:3000/certquery/cqn=" +cert_id,cert_id);
+    const data = await GetQR(sitename + "certquery/cqn=" +cert_id,cert_id);
     $(".selectedcertqueryqr").removeClass('hidden');
     $(".selectedcertqueryqr img").remove();
     $(".selectedcertqueryqr").append(data['imgEl']);
