@@ -31,9 +31,7 @@ $(document).ready(function () {
             $(".spinner-area").addClass("hidden");
           }
           grecaptcha
-            .execute("6LcAtNUbAAAAAExaI2BKUFPKtbbai2c9lwrMK0n2", {
-              action: "login",
-            })
+            .execute("6LcAtNUbAAAAAExaI2BKUFPKtbbai2c9lwrMK0n2")
             .then(function (token) {
               $("#sendbtn").click(function () {
                 var email = $("#email").val();
