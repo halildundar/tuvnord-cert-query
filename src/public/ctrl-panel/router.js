@@ -30,7 +30,7 @@ const Routes = new Router("myFirstRouter", [
     template: "users.html",
     name: "Sistem Kullanıcılar",
     data: {},
-  }
+  },
 ]);
 const IsAuthGet = (routePath) => {
   const route = Routes.routes.filter(function (r) {
@@ -53,7 +53,7 @@ const IsAuthGet = (routePath) => {
         }
       } else {
         User = null;
-        if(routePath !== "/ctrl-panel/login"){
+        if (routePath !== "/ctrl-panel/login") {
           window.location.pathname = "/ctrl-panel/login";
         }
       }
@@ -205,35 +205,37 @@ const UsersAreaJS = () => {
 
 const CertQueryAreaJS = () => {
   let selectedCert = null;
-  const sitename = "https://nervous-herschel.89-250-72-218.plesk.page/";//https://nervous-herschel.89-250-72-218.plesk.page/, "http://localhost:3000/"
+  const sitename = "https://nervous-herschel.89-250-72-218.plesk.page/"; //https://nervous-herschel.89-250-72-218.plesk.page/, "http://localhost:3000/"
   const pathname = window.location.pathname;
-  const GetQR = async (text,name) => {
+  const GetQR = async (text, name) => {
     const resp = await $.ajax({
       type: "POST",
       url: "/ctrl-panel/qr/qetQr",
-      data: JSON.stringify({ text: text,name }),
+      data: JSON.stringify({ text: text, name }),
       dataType: "json",
-      contentType: "application/json"
+      contentType: "application/json",
     });
-    console.log(resp)
+    console.log(resp);
     return resp;
   };
   const CertificateSorguImgArea = async () => {
-    const data = await GetQR(sitename + "cert-query/",'cert_qeury_url');
+    const data = await GetQR(sitename + "cert-query/", "cert_qeury_url");
     $(".certqueryqr img").remove();
-    $(".certqueryqr").append(data['imgEl']);
+    $(".certqueryqr").append(data["imgEl"]);
   };
-  const SelectedCertQr = async (cert_id)=>{
-    const data = await GetQR(sitename + "cert-query/?cqn=" +cert_id,cert_id);
-    $(".selectedcertqueryqr").removeClass('hidden');
+  const SelectedCertQr = async (cert_id) => {
+    const data = await GetQR(sitename + "cert-query/?cqn=" + cert_id, cert_id);
+    $(".selectedcertqueryqr").removeClass("hidden");
     $(".selectedcertqueryqr img").remove();
-    $(".selectedcertqueryqr").append(data['imgEl']);
-  }
+    $(".selectedcertqueryqr").append(data["imgEl"]);
+  };
   const onClear = () => {
     $("input[name='cert_no']").val("");
     $("input[name='trade_name']").val("");
     $("input[name='product_range']").val("Lifts");
-    $("select[name='legislation']").val("2014/33/EU Lifts and Safety Components For Lifts");
+    $("select[name='legislation']").val(
+      "2014/33/EU Lifts and Safety Components For Lifts"
+    );
     $("select[name='module']").val("Unit Verification-Annex VIII-Module G");
     $("select[name='status']").val("Active");
     $("select[name='standarts']").val("EN81-20:2020,EN81-50:2020");
@@ -249,7 +251,7 @@ const CertQueryAreaJS = () => {
     $(".btn-purple").addClass("hidden");
     $(".btn-red").addClass("hidden");
     selectedCert = null;
-    $(".selectedcertqueryqr").addClass('hidden');
+    $(".selectedcertqueryqr").addClass("hidden");
     $(".selectedcertqueryqr img").remove();
   };
   const onSave = (data) => {
@@ -301,7 +303,6 @@ const CertQueryAreaJS = () => {
         if (!!certs) {
           $("table tbody").html("");
           $.map(certs, function (cert, index) {
-          
             let modulename = "";
             $.each(cert.module.split("-"), function (index, txt) {
               modulename += index == 1 ? txt + "-" : index == 2 ? txt : "";
@@ -321,7 +322,7 @@ const CertQueryAreaJS = () => {
             `);
             $(`.trow${cert.id}`).click(function (e) {
               e.preventDefault();
-            
+
               selectedCert = cert;
               $("table tbody tr").each(function () {
                 $(this).removeClass("bg-black/10");
@@ -329,7 +330,9 @@ const CertQueryAreaJS = () => {
               $(this).addClass("bg-black/10");
               $("input[name='cert_no']").val(cert.cert_no);
               $("input[name='trade_name']").val(cert.trade_name);
-              $("select[name='legislation']").val("2014/33/EU Lifts and Safety Components For Lifts");
+              $("select[name='legislation']").val(
+                "2014/33/EU Lifts and Safety Components For Lifts"
+              );
               $("input[name='product_range']").val("Lifts");
               $("select[name='module']").val(cert.module);
               $("select[name='status']").val(cert.status);
@@ -379,6 +382,7 @@ const CertQueryAreaJS = () => {
     CertificateSorguImgArea();
   }
 };
+
 const LogOutBtn = () => {
   $("#logoutbtn").click(function () {
     $.ajax({

@@ -52,4 +52,14 @@ $(document).ready(function () {
       }
     }
   });
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const CertQ = urlParams.get("cqn");
+  // window.location.search = '';
+  window.history.replaceState(null, "", window.location.pathname);
+  if (!!CertQ) {
+    $("#search-txt").val(CertQ.toUpperCase());
+    selectedRegulation = regulations.find((item) => item.label == LegQ);
+    $("#search-btn").click();
+  }
 });
