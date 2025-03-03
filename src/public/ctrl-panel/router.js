@@ -219,12 +219,12 @@ const CertQueryAreaJS = () => {
     return resp;
   };
   const CertificateSorguImgArea = async () => {
-    const data = await GetQR(sitename + "certquery/",'cert_qeury_url');
+    const data = await GetQR(sitename + "cert-query/",'cert_qeury_url');
     $(".certqueryqr img").remove();
     $(".certqueryqr").append(data['imgEl']);
   };
   const SelectedCertQr = async (cert_id)=>{
-    const data = await GetQR(sitename + "certquery/cqn=" +cert_id,cert_id);
+    const data = await GetQR(sitename + "cert-query/?cqn=" +cert_id,cert_id);
     $(".selectedcertqueryqr").removeClass('hidden');
     $(".selectedcertqueryqr img").remove();
     $(".selectedcertqueryqr").append(data['imgEl']);
