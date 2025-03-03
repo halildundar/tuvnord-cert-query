@@ -13,10 +13,10 @@ export let CtrlPanelRoutes = (root, router) => {
   router.post(`${root}/users/save-user`, SaveUser);
   router.post(`${root}/users/delete-user`, DeleteUser);
 
-  router.post(`${root}/cq/get-certs`, GetCerts);
-  router.post(`${root}/cq/update-cert`, UpdateCert);
-  router.post(`${root}/cq/save-cert`, SaveCert);
-  router.post(`${root}/cq/delete-cert`, DeleteCert);
+  router.post(`${root}/certficates/get-certs`, GetCerts);
+  router.post(`${root}/certficates/update-cert`, UpdateCert);
+  router.post(`${root}/certficates/save-cert`, SaveCert);
+  router.post(`${root}/certficates/delete-cert`, DeleteCert);
 
   router.post(`${root}/logout`, postLogOut);
   router.post(`${root}/login`, Recaptha, Authenticate);

@@ -30,21 +30,7 @@ const Routes = new Router("myFirstRouter", [
     template: "users.html",
     name: "Sistem Kullanıcılar",
     data: {},
-  },
-  // {
-  //   path: "/ctrl-panel/cq",
-  //   viewId: "#root_view",
-  //   template: "cert-query.html",
-  //   name: "Sertifika Sorgulama",
-  //   data: {},
-  // },
-  // {
-  //   path: "/ctrl-panel/login",
-  //   viewId: "#root_view",
-  //   template: "login.html",
-  //   name: "Giriş Yap",
-  //   data: {},
-  // },
+  }
 ]);
 const IsAuthGet = (routePath) => {
   const route = Routes.routes.filter(function (r) {
@@ -367,7 +353,7 @@ const CertQueryAreaJS = () => {
       },
     });
   };
-  if (pathname === "/ctrl-panel/cq") {
+  if (pathname === "/ctrl-panel/certificates") {
     onGetCerts();
     $(".btn-purple").click(onClear);
     $(".btn-orange").click(function (e) {
