@@ -32,7 +32,7 @@ $(document).ready(function () {
           }
           grecaptcha
             .execute("6Lf5wyQeAAAAAE7Zi-cijUaa-wMAP9uUhtp-MzWt", {
-              action: "login",
+              action: "submit",
             })
             .then(function (token) {
               $("#sendbtn").click(function () {
