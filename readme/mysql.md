@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `kurslar`(
 `user_id` INT(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `users` VALUES (0,'Halil Dündar','halildundar.eee@gmail.com','153ud153');
+INSERT INTO `users` VALUES (0,'Halil Dündar','halildundar.eee@gmail.com','153ud153','sys-admin');
 
 column ekleme
 ALTER TABLE table_name

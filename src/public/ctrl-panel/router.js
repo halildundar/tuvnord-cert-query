@@ -218,7 +218,7 @@ const UsersAreaJS = () => {
 
 const CertQueryAreaJS = () => {
   let selectedCert = null;
-  const sitename = "https://nervous-herschel.89-250-72-218.plesk.page/";//https://nervous-herschel.89-250-72-218.plesk.page/, "http://localhost:3000/"
+  const sitename = "https://nervous-herschel.89-250-72-218.plesk.page/,";//https://nervous-herschel.89-250-72-218.plesk.page/, "http://localhost:3000/"
   const pathname = window.location.pathname;
   const GetQR = async (text,name) => {
     const resp = await $.ajax({

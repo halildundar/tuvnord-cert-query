@@ -1,10 +1,10 @@
-NODE_ENV=production
+NODE_ENV=development
 RECAPTCHA_SECRET_KEY = 6Lf2FrEqAAAAAJMe5_rgRbjbn05Hqkb7FhJgQWpj
 MYSQL_DB_HOST='localhost'
 MYSQL_DB_NAME='tuvnord'
 MYSQL_DB_PORT=3306
-MYSQL_DB_USERNAME='root'
-MYSQL_DB_PASSWORD=''
+MYSQL_DB_USERNAME='root' //tuvnrd
+MYSQL_DB_PASSWORD='' //tuvnrd56*21
 MYSQL_GeneralDB_HOST='localhost'
 MYSQL_GeneralDB_NAME='geneldata'
 MYSQL_GeneralDB_PORT=3307
