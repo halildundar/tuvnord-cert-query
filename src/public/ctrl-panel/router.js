@@ -215,7 +215,6 @@ const CertQueryAreaJS = () => {
       dataType: "json",
       contentType: "application/json",
     });
-    console.log(resp);
     return resp;
   };
   const CertificateSorguImgArea = async () => {
