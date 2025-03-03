@@ -156,7 +156,7 @@ const UsersAreaJS = () => {
       type: "POST",
       url: "/ctrl-panel/users/get-users",
       dataType: "json",
-      contentType: "applciation/json",
+      contentType: "application/json",
       success: function (response) {
         const { users } = response;
         if (!!users) {
@@ -307,7 +307,7 @@ const CertQueryAreaJS = () => {
       type: "POST",
       url: "/ctrl-panel/cq/get-certs",
       dataType: "json",
-      contentType: "applciation/json",
+      contentType: "application/json",
       success: function (response) {
         const { certs } = response;
         if (!!certs) {
@@ -396,9 +396,8 @@ const LogOutBtn = () => {
     $.ajax({
       type: "POST",
       url: "/ctrl-panel/logout",
-      data: "AnyData",
       dataType: "json",
-      contentType: "applciation/json",
+      contentType: "application/json",
       success: function (response) {
         window.location.pathname = "/ctrl-panel/login";
       },
