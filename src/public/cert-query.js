@@ -73,6 +73,7 @@ $(document).ready(async function () {
         $("#noCert").addClass("hidden");
         $("#docVer table tbody").html("");
         delete response["msg"];
+        $("#search-txt").val(response['cert_no'])
         $.map(response, function (val, key) {
           if (key !== "id") {
             let Keys = key.split("_").map((item) => {
