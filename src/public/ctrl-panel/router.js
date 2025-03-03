@@ -1,7 +1,7 @@
 import "./templates/dashboard.html";
 import "./templates/404.html";
 import "./templates/users.html";
-import "./templates/cert-query.html";
+import "./templates/certificates.html";
 let User = null;
 const Router = function (name, routes) {
   return {
@@ -18,13 +18,11 @@ const Routes = new Router("myFirstRouter", [
     data: {},
   },
   {
-    path: "/ctrl-panel/ce-belgeler",
+    path: "/ctrl-panel/certificates",
     viewId: "#root_view",
-    template: "ce-query.html",
+    template: "certificates.html",
     name: "CE Belgeleri",
-    data: {
-      name: "Yeni Bilgi",
-    },
+    data: {},
   },
   {
     path: "/ctrl-panel/users",
@@ -33,20 +31,20 @@ const Routes = new Router("myFirstRouter", [
     name: "Sistem Kullanıcılar",
     data: {},
   },
-  {
-    path: "/ctrl-panel/cq",
-    viewId: "#root_view",
-    template: "cert-query.html",
-    name: "Sertifika Sorgulama",
-    data: {},
-  },
-  {
-    path: "/ctrl-panel/login",
-    viewId: "#root_view",
-    template: "login.html",
-    name: "Giriş Yap",
-    data: {},
-  },
+  // {
+  //   path: "/ctrl-panel/cq",
+  //   viewId: "#root_view",
+  //   template: "cert-query.html",
+  //   name: "Sertifika Sorgulama",
+  //   data: {},
+  // },
+  // {
+  //   path: "/ctrl-panel/login",
+  //   viewId: "#root_view",
+  //   template: "login.html",
+  //   name: "Giriş Yap",
+  //   data: {},
+  // },
 ]);
 const IsAuthGet = (routePath) => {
   const route = Routes.routes.filter(function (r) {
