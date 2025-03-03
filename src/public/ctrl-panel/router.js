@@ -20,7 +20,7 @@ const Routes = new Router("myFirstRouter", [
   {
     path: "/ctrl-panel/ce-belgeler",
     viewId: "#root_view",
-    template: "ce-belgeler.html",
+    template: "ce-query.html",
     name: "CE Belgeleri",
     data: {
       name: "Yeni Bilgi",
