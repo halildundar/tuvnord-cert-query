@@ -57,7 +57,6 @@ $(document).ready(function () {
   window.history.replaceState(null, "", window.location.pathname);
   if (!!CertQ) {
     $("#search-txt").val(CertQ);
-    selectedRegulation = regulations.find((item) => item.label == LegQ);
     $("#search-btn").click();
   }
 });
