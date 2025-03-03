@@ -437,17 +437,11 @@ const ShowTemplate = async (routePath, viewId) => {
   CertQueryAreaJS();
 };
 const GoToPage = (routePath, viewId, data) => {
-  if(routePath == "/ctrl-panel/"){
-    routePath = routePath + 'ce-belgeler';
-  }
   window.history.pushState(data, "", routePath);
   ShowTemplate(routePath, viewId);
   GetBtnRoutes();
 };
 export const InitPage = () => {
   let currPath = window.location.pathname;
-  if(currPath == "/ctrl-panel/"){
-    currPath = currPath + 'ce-belgeler';
-  }
   IsAuthGet(currPath);
 };
