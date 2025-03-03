@@ -53,7 +53,7 @@ export let initPassportLocal = () => {
         passReqToCallback: true,
       },
       async (req, email, passw, done) => {
-        try {
+        try { 
           const user = await findUserByEmail(email);
           console.log("initPassport USer",user);
           if (!user) {
@@ -64,6 +64,9 @@ export let initPassportLocal = () => {
             );
           } else {
             let match = await comparePassword(passw, user);
+            console.log("ipassw",passw);
+            console.log("ipassw",user);
+            console.log("match",match);
             if (match === true) {
               return done(null, user, null);
             } else {
