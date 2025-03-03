@@ -1,7 +1,7 @@
-import "./templates/dashboard.hbs";
-import "./templates/404.hbs";
-import "./templates/users.hbs";
-import "./templates/cert-query.hbs";
+import "./templates/dashboard.html";
+import "./templates/404.html";
+import "./templates/users.html";
+import "./templates/cert-query.html";
 let User = null;
 const Router = function (name, routes) {
   return {
@@ -13,14 +13,14 @@ const Routes = new Router("myFirstRouter", [
   {
     path: "/ctrl-panel/",
     viewId: "#root_view",
-    template: "dashboard.hbs",
+    template: "dashboard.html",
     name: "Ctrl Panel Anasayfa",
     data: {},
   },
   {
     path: "/ctrl-panel/ce-belgeler",
     viewId: "#root_view",
-    template: "ce-belgeler.hbs",
+    template: "ce-belgeler.html",
     name: "CE Belgeleri",
     data: {
       name: "Yeni Bilgi",
@@ -29,21 +29,21 @@ const Routes = new Router("myFirstRouter", [
   {
     path: "/ctrl-panel/users",
     viewId: "#root_view",
-    template: "users.hbs",
+    template: "users.html",
     name: "Sistem Kullanıcılar",
     data: {},
   },
   {
     path: "/ctrl-panel/cq",
     viewId: "#root_view",
-    template: "cert-query.hbs",
+    template: "cert-query.html",
     name: "Sertifika Sorgulama",
     data: {},
   },
   {
     path: "/ctrl-panel/login",
     viewId: "#root_view",
-    template: "login.hbs",
+    template: "login.html",
     name: "Giriş Yap",
     data: {},
   },
@@ -426,7 +426,7 @@ const ShowTemplate = async (routePath, viewId) => {
     );
     LogOutBtn();
   } else {
-    const resp = await fetch("/ctrl-panel/templates/404.hbs");
+    const resp = await fetch("./templates/404.html");
     const content = await resp.text();
     const temp404 = Handlebars.compile(content);
     $(viewId).html(temp404);
