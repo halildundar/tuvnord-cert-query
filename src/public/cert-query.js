@@ -1,7 +1,6 @@
 import "./cert-query.scss";
 
 $(document).ready(function () {
-    console.log('init')
   $("#search-btn").click(async function (e) {
     e.preventDefault();
     if (!$("#search-txt").val()) {
@@ -19,7 +18,6 @@ $(document).ready(function () {
       contentType:"application/json"
     });
     if (!!response) {
-      console.log("response", response);
       const { msg } = response;
       $("#docVer").removeClass("hidden");
       $("#articArea").addClass("hidden");
@@ -58,7 +56,7 @@ $(document).ready(function () {
   // window.location.search = '';
   window.history.replaceState(null, "", window.location.pathname);
   if (!!CertQ) {
-    $("#search-txt").val(CertQ.toUpperCase());
+    $("#search-txt").val(CertQ);
     selectedRegulation = regulations.find((item) => item.label == LegQ);
     $("#search-btn").click();
   }
