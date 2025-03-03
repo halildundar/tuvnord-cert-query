@@ -1,3 +1,7 @@
+import "./templates/dashboard.hbs";
+import "./templates/404.hbs";
+import "./templates/users.hbs";
+import "./templates/cert-query.hbs";
 let User = null;
 const Router = function (name, routes) {
   return {
