@@ -55,20 +55,20 @@ const IsAuthGet = (routePath) => {
     dataType: "json",
     success: function (response) {
       console.log("response", response);
-      GoToPage(route.path, route.viewId, route.data);
-      // if (!!response) {
-      //   User = response;
-      //   if (!!route) {
-      //     GoToPage(route.path, route.viewId, route.data);
-      //   } else {
-      //     GoToPage(routePath, "#root_view", {});
-      //   }
-      // } else {
-      //   User = null;
-      //   if(routePath !== "/ctrl-panel/login"){
-      //     window.location.pathname = "/ctrl-panel/login";
-      //   }
-      // }
+      // GoToPage(route.path, route.viewId, route.data);
+      if (!!response) {
+        User = response;
+        if (!!route) {
+          GoToPage(route.path, route.viewId, route.data);
+        } else {
+          GoToPage(routePath, "#root_view", {});
+        }
+      } else {
+        User = null;
+        if(routePath !== "/ctrl-panel/login"){
+          window.location.pathname = "/ctrl-panel/login";
+        }
+      }
     },
   });
 };

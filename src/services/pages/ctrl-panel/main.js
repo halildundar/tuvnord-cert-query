@@ -43,7 +43,7 @@ export let CtrlPanelRoutes = (root, router) => {
   //     layout: "ctrl-panel",
   //   });
   // });
-  router.get(`${root}/*`,  async (req, res) => {
+  router.get(`${root}/*`,checkLoggedIn,  async (req, res) => {
     res.render("pages/ctrl-panel/main.hbs", {
       sitename: "Ctrlpanel | Artıdoksan",
       page: "Ctrlpanel | Artıdoksan",
