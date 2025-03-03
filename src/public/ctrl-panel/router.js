@@ -414,7 +414,7 @@ const ShowTemplate = async (routePath, viewId) => {
 
   $(viewId).html("");
   if (!!route) {
-    const resp = await fetch(`/ctrl-panel/templates/${route.template}`);
+    const resp = await fetch(`./templates/${route.template}`);
     const content = await resp.text();
     const rendered = Handlebars.compile(content);
 
