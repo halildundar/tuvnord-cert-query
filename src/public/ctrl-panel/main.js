@@ -8,7 +8,7 @@ $(document).ready(function () {
   InitPage();
   if(currPath == '/ctrl-panel/login'){
     $("script[src='/ctrl-panel/main.js']").before(
-      "<script src='https://www.google.com/recaptcha/api.js?render=6Lf5wyQeAAAAAE7Zi-cijUaa-wMAP9uUhtp-MzWt'></script>"
+      "<script src='https://www.google.com/recaptcha/api.js?render=6LcAtNUbAAAAAExaI2BKUFPKtbbai2c9lwrMK0n2'></script>"
     );
     $("#email").val("halildundar.eee@gmail.com");
     $("#passw").val("153ud153");
@@ -31,7 +31,7 @@ $(document).ready(function () {
             $(".spinner-area").addClass("hidden");
           }
           grecaptcha
-            .execute("6Lf5wyQeAAAAAE7Zi-cijUaa-wMAP9uUhtp-MzWt", {
+            .execute("6LcAtNUbAAAAAExaI2BKUFPKtbbai2c9lwrMK0n2", {
               action: "submit",
             })
             .then(function (token) {
