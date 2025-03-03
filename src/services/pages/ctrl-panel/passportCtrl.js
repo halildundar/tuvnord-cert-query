@@ -1,10 +1,6 @@
 import passportLocal from "passport-local";
 import passport from "passport";
-import {
-  findUserById,
-  findUserByEmail,
-  comparePassword,
-} from "./user_db.js";
+import { findUserById, findUserByEmail, comparePassword } from "./user_db.js";
 
 let LocalStrategy = passportLocal.Strategy;
 export let Authenticate = (req, res, next) => {
@@ -18,7 +14,6 @@ export let Authenticate = (req, res, next) => {
           return res.redirect("/ctrl-panel/login");
         }
         req.logIn(user, function (err) {
-          
           if (err) {
             return next(err);
           }
@@ -30,7 +25,7 @@ export let Authenticate = (req, res, next) => {
           return next(err);
         }
         if (!user) {
-          console.log("Kullunıcı bulunamadı" );
+          console.log("Kullunıcı bulunamadı");
           return res
             .status(401)
             .json({ ok: false, msg: "Kullunıcı bulunamadı" });
@@ -59,23 +54,22 @@ export let initPassportLocal = () => {
       },
       async (req, email, passw, done) => {
         try {
-          await findUserByEmail(email).then(async (user) => {
-            if (!user) {
-              return done(
-                null,
-                false,
-                req.flash("errors", `This user email "${email}" doesn't exist`)
-              );
+          const user = await findUserByEmail(email);
+          console.log("initPassport USer",user);
+          if (!user) {
+            return done(
+              null,
+              false,
+              req.flash("errors", `This user email "${email}" doesn't exist`)
+            );
+          } else {
+            let match = await comparePassword(passw, user);
+            if (match === true) {
+              return done(null, user, null);
+            } else {
+              return done(null, false, req.flash("errors", match));
             }
-            if (user) {
-              let match = await comparePassword(passw, user);
-              if (match === true) {
-                return done(null, user, null);
-              } else {
-                return done(null, false, req.flash("errors", match));
-              }
-            }
-          });
+          }
         } catch (err) {
           console.log(err);
           return done(null, false, { message: err });
