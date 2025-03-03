@@ -30,13 +30,13 @@ export let findUserById = async (id) => {
 export let comparePassword = (passw, userObject) => {
   return new Promise(async (resolve, reject) => {
     try {
-      await compare(passw, userObject.passw).then((isMatch) => {
-        if (isMatch) {
-          resolve(true);
-        } else {
-          resolve(`The password that you've entered is incorrect`);
-        }
-      });
+      // const isMatch = await compare(passw, userObject.passw);
+      const isMatch = passw === userObject.passw;
+      if (isMatch) {
+        resolve(true);
+      }else{
+        resolve(`The password that you've entered is incorrect`);
+      }
     } catch (e) {
       reject(e);
     }
