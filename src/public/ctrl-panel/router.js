@@ -155,7 +155,6 @@ const UsersAreaJS = () => {
     $.ajax({
       type: "POST",
       url: "/ctrl-panel/users/get-users",
-      data: "data",
       dataType: "json",
       contentType: "applciation/json",
       success: function (response) {
@@ -307,7 +306,6 @@ const CertQueryAreaJS = () => {
     $.ajax({
       type: "POST",
       url: "/ctrl-panel/cq/get-certs",
-      data: "data",
       dataType: "json",
       contentType: "applciation/json",
       success: function (response) {

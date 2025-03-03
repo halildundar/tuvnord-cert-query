@@ -54,7 +54,6 @@ export let getUsers = async ()=>{
 }
 export let updateUser = async (id,queryData)=>{
   try {
-    console.log(id,queryData);
     const rows = await Query("UPDATE `users` SET ? WHERE id = ?",[queryData,id]);
     return rows;
   } catch (error) {
@@ -64,7 +63,6 @@ export let updateUser = async (id,queryData)=>{
 }
 export let saveUser = async (queryData)=>{
   try {
-    console.log(queryData);
     const rows = await Query("INSERT INTO `users` VALUES (0,?)",[queryData]);
     return rows;
   } catch (error) {
@@ -72,10 +70,8 @@ export let saveUser = async (queryData)=>{
     return false;
   }
 }
-
 export let deleteUser = async (id)=>{
   try {
-    console.log(id);
     const rows = await Query("DELETE FROM `users` WHERE id = ?",[id]);
     return rows;
   } catch (error) {
