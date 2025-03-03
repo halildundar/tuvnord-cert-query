@@ -47,6 +47,7 @@ $(document).ready(function () {
                   passw,
                   recaptchaToken: token,
                 });
+                console.log(sendedData);
                 $.ajax({
                   type: "post",
                   url: "/ctrl-panel/login",
