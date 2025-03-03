@@ -255,7 +255,7 @@ const CertQueryAreaJS = () => {
   const onSave = (data) => {
     $.ajax({
       type: "POST",
-      url: "/ctrl-panel/cq/save-cert",
+      url: "/ctrl-panel/certificates/save-cert",
       data: JSON.stringify(data),
       dataType: "json",
       contentType: "application/json",
@@ -267,7 +267,7 @@ const CertQueryAreaJS = () => {
   const onDelete = (data) => {
     $.ajax({
       type: "POST",
-      url: "/ctrl-panel/cq/delete-cert",
+      url: "/ctrl-panel/certificates/delete-cert",
       data: JSON.stringify(data),
       dataType: "json",
       contentType: "application/json",
@@ -280,7 +280,7 @@ const CertQueryAreaJS = () => {
   const onUpdate = (data) => {
     $.ajax({
       type: "POST",
-      url: "/ctrl-panel/cq/update-cert",
+      url: "/ctrl-panel/certificates/update-cert",
       data: JSON.stringify(data),
       dataType: "json",
       contentType: "application/json",
@@ -293,7 +293,7 @@ const CertQueryAreaJS = () => {
     onClear();
     $.ajax({
       type: "POST",
-      url: "/ctrl-panel/cq/get-certs",
+      url: "/ctrl-panel/certificates/get-certs",
       dataType: "json",
       contentType: "application/json",
       success: function (response) {
