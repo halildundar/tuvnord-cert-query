@@ -50,6 +50,7 @@ app.engine(
 );
 app.set("view engine", ".hbs");
 app.set("views", `${process.cwd()}/views`);
+
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -61,12 +62,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 appRoutes(app);
 app.all("**", (req, res) => {
-  console.log('sedssdrver.js')
-  return res.status(404).render("pages/404.hbs",{
-    page:'404',
-    title:'404Page',
-    publicdata:'/404/main'
-});
+  res.render("pages/404.hbs");
 });
 
 

@@ -1,0 +1,60 @@
+<div class="">
+    <div class="max-w-[1200px] mx-auto">
+        <div class="flex">
+            <div class="w-1/3 p-2 border border-gray-300 rounded-md bg-[whitesmoke]">
+                <form class="space-y-2">
+                      <div>
+                      
+                        <label for="name" class="form-label">Ad Soyad</label>
+                        <input type="name" name="name" id="name" class="form-text" placeholder="Name/Surname">
+                    </div>
+                    <div>
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" name="email" id="email" class="form-text" placeholder="name@company.com">
+                    </div>
+                    <div>
+                        <label for="passw" class="form-label">Password</label>
+                        <input type="text" name="passw" id="passw" class="form-text" placeholder="Password">
+                    </div>
+                    <div>
+
+                        <div class="">
+                            <label for="role" class="form-label">User Type:</label>
+                            <select name="role" id="role" class="form-select">
+                                <option value="sys-admin">System Admin</option>
+                                <option value="admin">Admin</option>
+                                <option value="user">User</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="flex items-center py-2">
+                        <button type="button" class="btn btn-blue">
+                            Save
+                        </button>
+                        <button type="button" class="btn btn-orange">
+                            Update
+                        </button>
+                        <button type="button" class="btn btn-red">
+                            Delete
+                        </button>
+                        <button type="button" class="btn btn-purple">
+                            Clear
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="w-2/3 pl-2">
+                <table class="w-full border-collapse border-b border-r border-gray-300">
+                    <thead class="bg-[whitesmoke]">
+                        <tr>
+                            <th class="border-t border-l border-gray-300 px-2 py-1 text-start text-[0.9rem]">Ad Soyad</th>
+                            <th class="border-t border-l border-gray-300 px-2 py-1 text-start text-[0.9rem]">Email</th>
+                            <th class="border-t border-l border-gray-300 px-2 py-1 text-start text-[0.9rem]">Role</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,29 +1,30 @@
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import WebpackShellPluginNext from "webpack-shell-plugin-next";
 import { glob } from "glob";
-import { resolve, dirname } from "node:path";
+import { resolve,dirname } from "node:path";
 import TerserPlugin from "terser-webpack-plugin";
 import nodeExternals from "webpack-node-externals";
 import { config } from "dotenv";
-import { CleanWebpackPlugin } from "clean-webpack-plugin";
-config({ path: "./src/const.env" });
+config({path:"./src/const.env"});
 console.log(process.env.NODE_ENV);
+
+
 export default {
   // mode: "development",
-  mode: process.env.NODE_ENV,
-  devtool: "eval-source-map", //eval
-  entry: {
-    server: "./src/server.js",
-    viewchanges: "./src/viewschanges.js",
-    "public/main": "./src/public/main.js",
-    "public/home/main": "./src/public/home/main.js",
-    "public/login/main": "./src/public/login/main.js",
-    "public/404/main": "./src/public/404/main.js",
+  mode:process.env.NODE_ENV,
+  devtool: "eval-source-map",//eval
+  entry: {  
+    "server":'./src/server.js',
+    "viewchanges":'./src/viewschanges.js',
+    "public/home":'./src/public/home.js',
+    "public/cert-query":'./src/public/cert-query.js',
+    "public/main":'./src/public/main.js',
+    "public/ctrl-panel/main":'./src/public/ctrl-panel/main.js',
   },
   output: {
     path: resolve(process.cwd(), "dist"),
     // clean: process.env.NODE_ENV == 'production',
-    // clean: false,
+    clean: true,
     // publicPath: '/',
     // assetModuleFilename: (pathData) => {
     //   const filepath = dirname(pathData.filename)
@@ -48,19 +49,19 @@ export default {
             loader: MiniCssExtractPlugin.loader,
             // options: { reloadAll: true },
           },
-          "css-loader",
+          'css-loader',
           "postcss-loader",
           "sass-loader",
         ],
       },
       {
-        test: /\.(png|jpeg|jpg|webp|gif|woff2|ttf|otf|woff|eot|svg)$/i,
-        type: "asset/resource",
+        test: /\.(png|jp?eg|webp|gif|woff2|ttf|otf|woff|eot|svg)$/i,
+        type: 'asset/resource',
         generator: {
-          outputPath: "public/",
-          publicPath: "//",
+          outputPath: 'public/',
+          publicPath: '//',
           // filename:"[name][ext][query]",
-          filename: (name) => {
+          filename:(name) => {
             /**
              * @description Remove first & last item from ${path} array.
              * @example
@@ -69,12 +70,12 @@ export default {
              */
             const path = name.filename.split("/").slice(2, -1).join("/");
             return `${path}/[name][ext]`;
-          },
         },
+        }
       },
       {
         test: /\.(hbs|ico|txt|docx|ps1|config|json|env)$/,
-        type: "javascript/auto",
+        type: 'javascript/auto',
         use: [
           {
             loader: "file-loader",
@@ -89,7 +90,7 @@ export default {
       },
     ],
   },
-
+  
   optimization: {
     minimize: true,
     minimizer: [
@@ -111,6 +112,7 @@ export default {
       filename: "[name].css",
     }),
     new WebpackShellPluginNext({
+     
       onAfterDone: {
         scripts: ["node copyFolder.js"],
         blocking: false,
@@ -131,12 +133,6 @@ export default {
       //   blocking: true,
       //   parallel: false
       // }
-    }),
-    new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: [
-        "**/*",
-        "!.git/**",
-      ]
     }),
     // new BrowserSyncPlugin({
     //   // browse to http://localhost:3000/ during development,

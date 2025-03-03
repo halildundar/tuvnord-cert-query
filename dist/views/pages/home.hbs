@@ -1,112 +1,139 @@
-{{>header}}
-
-<div class="">
-    <div class="max-w-[1200px] mx-auto py-5 flex flex-wrap">
-        <div class="w-full lg:w-[65%] px-4 text-justify">
-            <form class="w-full mx-auto relative mb-5">
-                <h3 class="text-[1.5rem] font-bold mb-2 ">Certificate Query</h3>
-                <div class="flex xl:max-w-[85%]">
-                    <button id="dropdown-button" data-dropdown-toggle="dropdown"
-                        class="shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 "
-                        type="button"> <span class="txt-area">Legislation</span> <svg class="w-2.5 h-2.5 ms-2.5"
-                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="m1 1 4 4 4-4" />
-                        </svg></button>
-                    <div id="dropdown"
-                        class="z-10 hidden absolute top-full left-0 w-44 h-auto bg-white divide-y divide-gray-100 rounded-lg shadow-sm  ">
-                        <ul class="py-2 text-sm text-gray-700 " aria-labelledby="dropdown-button">
-                        </ul>
-                    </div>
-                    <div class="relative w-full">
-                        <input type="search" id="search-dropdown"
-                            class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-e-lg border-s-gray-50 border-s-2 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 "
-                            placeholder="Certificate Number" required />
-                        <button id="search-btn" type="button"
-                            class="absolute top-0 end-0 p-2.5 text-sm font-medium h-full text-white bg-blue-700 rounded-e-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 ">
-                            <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 20 20">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-                            </svg>
-                            <span class="sr-only">Search</span>
-                        </button>
+{{> header}}
+<div class="hidden lg:block bgImageAreaLg">
+    <div class="max-w-[--max-width] mx-auto flex flex-col h-full">
+        <div class="py-40 flex-1 flex  items-center ">
+            <h2 class="text-[3.2rem] text-white font-bold">TÜV CYPRUS</h2>
+        </div>
+        <div class="flex">
+            <div class="w-1/3 pr-10">
+                <div class="flex flex-col bg-white">
+                    <div class="flex-1 text-center py-10 text-[--tuv-color]">About US</div>
+                    <div class="flex items-center text-center bg-[--tuv-color] text-white py-4  justify-center">
+                        <i class="tio text-white text-[1.6rem] mr-1">home</i>
+                        OUR COMPANY
                     </div>
                 </div>
-            </form>
-            <article id="articArea" class=" lg:pr-4 lg:w-[100%]">
-                <h2 class="mb-3 text-[1.4rem] lg:text-[2.2rem] font-bold text-center lg:text-left">Welcome to the
-                    TÜVNord certificate
-                    information area</h2>
-
-                <p class="xl:pr-5 ">
-                    <img src="/assets/tuvgrp.jpg" class="lg:float-left lg:w-[45%] w-[50%] float-left h-auto mr-4 mb-2"
-                        alt="">
-                    “Making our world safer”.
-                    Under this slogan, TÜVNORD, with its approximately 10,000 employees, provides services in 70
-                    countries to make people, the environment,
-                    products, organizations and facilities safer, more reliable, more effective and efficient. The
-                    main areas of these services are Industrial Services, Natural Resources, Education,
-                    Transportation and Human Resources.
-
-                    TÜV NORD's Roots
-
-                    The success story of the TÜVNORD Group began in 1869 with the voluntary supervision and
-                    inspection of steam boilers, which were newly introduced to industry at that time, for their
-                    safe operation.
-
-                    These studies, which began under the roof of DÜV (Dampfkessel Überwachungs-Verein; Steam Boiler
-                    Supervision Association), became widespread and gained validity when the state administration
-                    authorized the commissioning of such hazardous facilities and relied on DÜV's technical report
-                    for the permit.
-                </p>
-                <p>
-
-
-                </p>
-            </article>
-            <div id="docVer" class="hidden lg:pr-4 lg:w-[95%]">
-                <h2 class="text-[1rem] lg:text-[1.4rem] font-bold">DOCUMENT VERIFICATION</h2>
-                <table class="hidden border-collapse w-full">
-                    <tbody>
-
-                    </tbody>
-                </table>
-                <div id="noCert" class=" text-center py-10 text-[1.8rem] lg:text-[3rem] font-bold text-black/40">
-                    Not Found
+            </div>
+            <div class="w-1/3 pr-10">
+                <div class="flex flex-col bg-white">
+                    <div class="flex-1 text-center py-10 text-[--tuv-color]">System Sertification</div>
+                    <div class="flex items-center text-center bg-[--tuv-color] text-white py-4  justify-center">
+                        <i class="tio text-white text-[1.6rem] mr-1">star</i>
+                        OUR SERVICES
+                    </div>
+                </div>
+            </div>
+            <div class="w-1/3">
+                <div class="flex flex-col bg-white">
+                    <div class="flex-1 text-center py-10 text-[--tuv-color]"> CAREER</div>
+                    <div class="flex items-center text-center bg-[--tuv-color] text-white py-4  justify-center">
+                        <i class="tio text-white text-[1.6rem] mr-1">group_equal</i>
+                        CAREER
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="w-full  lg:w-[35%]   px-4 py-10 space-y-2">
-            <h3 class="text-[1.2rem] lg:text-[1.8rem] font-bold">KVKK and Privacy</h3>
-            <ul class=" space-y-4">
-                <li>
-                    <a target="_blank" href="https://www.tuv-nord.com/tr/tr/kvkk/web-gizlilik-ve-kvk-ilkeleri/"
-                        class="text-[0.9rem] bg-gray-200 px-4 py-2 hover:bg-[--tvclr] rounded-md duration-200 hover:text-white"
-                        aria-current="true">
-                        Principles of Privacy and Protection of Personal Data
-                    </a>
-                </li>
-
-                <li>
-                    <a target="_blank" href="https://www.tuv-nord.com/tr/tr/kvkk/ilgili-kisi-basvuru-formu/"
-                        class="text-[0.9rem] bg-gray-200 px-4 py-2 hover:bg-[--tvclr] rounded-md duration-200 hover:text-white">Related
-                        Person Application Form</a>
-                </li>
-                <li>
-                    <a target="_blank" href="https://www.tuv-nord.com/tr/tr/kvkk/cerez-politikasi/"
-                        class="text-[0.9rem] bg-gray-200 px-4 py-2 hover:bg-[--tvclr] rounded-md duration-200 hover:text-white">Cookie
-                        Policy</a>
-                </li>
-                <li>
-                    <a target="_blank" href="https://www.tuv-nord.com/tr/tr/kvkk/iletisim-formu-aydinlatma-metni/"
-                        class="text-[0.9rem] bg-gray-200 px-4 py-2 hover:bg-[--tvclr] rounded-md duration-200 hover:text-white">Contact
-                        Form Information Text</a>
-                </li>
-            </ul>
-
-        </div>
+        <div class="h-10"></div>
     </div>
 </div>
+<div class="hidden lg:block">
+    <div class="max-w-[--max-width] mx-auto py-10">
+        <h2 class="text-[2.4rem]">More Information</h2>
+        <hr class="mt-2 border border-gray-300">
+        <div class="w-3/4 mx-auto flex py-10">
+            <div class="w-1/2 pr-10 space-y-4">
+                <img src="https://www.tuv-nord.com/fileadmin/_processed_/b/7/csm_news_d7d837255d.jpg"
+                    class="w-full h-auto" alt="">
+                <h3 class="text-[--tuv-color] font-semibold text-[1.2rem]">Newsletter</h3>
+                <p>
+                    TÜV CYPRUS electronic Newsletter including all latest news...
+                </p>
+                <a class="flex items-center">
+                    <span class="text-[--tuv-color] font-semibold text-[1.2rem]">Read More</span>
+                    <i class="tio text-[--tuv-color] font-semibold text-[1.8rem]">chevron_right</i>
+                </a>
+            </div>
+            <div class="w-1/2 pl-10 space-y-4">
+                <img src="https://www.tuv-nord.com/fileadmin/_processed_/9/6/csm_Presse_90a8a0d90d.jpg"
+                    class="w-full h-auto" alt="">
+                <h3 class="text-[--tuv-color] font-semibold text-[1.2rem]">News And Events</h3>
+                <p>
+                    All current and archived press releases, photos and other publications can be found here...
+                </p>
+                <a class="flex items-center">
+                    <span class="text-[--tuv-color] font-semibold text-[1.2rem]">Read More</span>
+                    <i class="tio text-[--tuv-color] font-semibold text-[1.8rem]">chevron_right</i>
+                </a>
+            </div>
+        </div>
+        <div class="bg-[--tuv-color1] p-10">
+            <div class="flex items-center space-x-4">
+                <button class="px-5 py-3 bg-[--tuv-color] hover:bg-[--tuv-color1] duration-200 text-white flex items-center">
+                    <i class="tio text-white text-[1.6rem] mr-2">messages</i>
+                    <h3 class="text-[1rem] font-bold">CONTACT</h3>
+                </button>
+                <button class="px-5 py-3 bg-[--tuv-color] hover:bg-[--tuv-color1] duration-200 text-white flex items-center">
+                    <i class="tio text-white text-[1.6rem] mr-2">email_outlined</i>
+                    <h3 class="text-[1rem] font-bold">SEND MAIL</h3>
+                </button>
+            </div>
+            <div class="text-white py-5">
+                 <b>TÜV CYPRUS</b><br>
 
-{{>footer}}
+                Papaflessa 2, 2235 Latsia, Nicosia, Cyprus<br>
+                P.O.Box: 20732, 1663 Nicosia, Cyprus<br><br><a href="tel:+357 22442840" class="PT34006">Tel.: +357
+                    22442840</a><br>
+                Fax: +357 22442850<br><a href="mailto:info@tuvcyprus.com.cy"
+                    class="PT12006">info@tuvcyprus.com.cy</a><br>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="lg:hidden">
+    <div class="grid grid-cols-2 gap-5 p-5 pb-0">
+        <a class="text-white flex flex-col items-center justify-center  h-[105px] bg-[--tuv-color] p-4">
+            <i class="tio text-[2rem]">home</i>
+            <span class="font-bold ">OUR COMPANY</span>
+        </a>
+        <a class="text-white flex flex-col items-center justify-center  h-[105px] bg-[--tuv-color] p-4">
+            <i class="tio text-[2rem]">star</i>
+            <span class="font-bold ">OUR SERVICES</span>
+        </a>
+        <a class="text-white flex flex-col items-center justify-center  h-[105px] bg-[--tuv-color] p-4">
+            <i class="tio text-[2rem]">group_equal</i>
+            <span class="font-bold ">CAREER</span>
+        </a>
+        <a href="/cert-query" class="text-white flex flex-col items-center justify-center  h-[105px] bg-red-600 p-4">
+            <i class="tio text-[2rem]">search</i>
+            <span class="font-bold ">Certificate Query</span>
+        </a>
+    </div>
+</div>
+<div class="lg:hidden">
+    <div class="p-5 ">
+        <div class="p-5 py-10 bg-[--tuv-color1] text-white">
+            <span>TÜV CYPRUS</span><b>TÜV CYPRUS</b><br>
+
+            Papaflessa 2, 2235 Latsia, Nicosia, Cyprus<br>
+            P.O.Box: 20732, 1663 Nicosia, Cyprus<br><br><a href="tel:+357 22442840" class="PT34006">Tel.: +357
+                22442840</a><br>
+            Fax: +357 22442850<br><a href="mailto:info@tuvcyprus.com.cy" class="PT12006">info@tuvcyprus.com.cy</a><br>
+
+            <div class="flex flex-col space-y-2 pt-5">
+                <a class="px-5 py-3 text-white bg-[--tuv-color] flex items-center " rel="nofollow"
+                    href="https://www.tuv-nord.com/cy/en/contact-me/cid/875/">
+                    <i class="tio text-white text-[1.6rem] mr-2">call</i>
+                    Contact
+                </a>
+                <a href="mailto:info@tuvcyprus.com.cy" class="px-5 py-3 text-white bg-[--tuv-color] flex items-center">
+                    <i class="tio text-white text-[1.6rem]  mr-2">email</i>
+
+                    Send mail
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+{{> footer}}

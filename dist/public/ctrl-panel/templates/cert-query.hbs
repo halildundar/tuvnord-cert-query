@@ -1,0 +1,134 @@
+<div class="">
+    <a href="" target="_blank">
+        <img src="" alt="">
+    </a>
+    <div class="max-w-[1200px] mx-auto">
+        <div class="flex">
+            <div class="w-1/4 p-2 border border-gray-300 rounded-md bg-[whitesmoke]">
+                <div class="selectedcertqueryqr hidden">
+                    <p class="text-[0.8rem] font-bold pb-0">Certificate QR:</p>
+                    <hr class="pb-2">
+                </div>
+                <form class="space-y-2">
+                    <div>
+                        <label for="cert_no" class="form-label">Certificate No</label>
+                        <input type="text" name="cert_no" id="cert_no" class="form-text" placeholder="Certificate No">
+                    </div>
+                    <div>
+                        <label for="trade_name" class="form-label">Trade Name</label>
+                        <input type="trade_name" name="trade_name" id="trade_name" class="form-text"
+                            placeholder="Trade Name">
+                    </div>
+                    <div class="hidden">
+                        <label for="legislation" class="form-label">Legislation:</label>
+                        <select name="legislation" id="legislation" class="form-select">
+                            <option value="2014/33/EU Lifts and Safety Components For Lifts">2014/33/EU Lifts and Safety Components For
+                                Lifts</option>
+                        </select>
+                    </div>
+
+                    <div class="hidden">
+                        <label for="product_range" class="form-label">Product Range</label>
+                        <input type="text" name="product_range" id="product_range" class="form-text"
+                            placeholder="Lifts">
+                    </div>
+                    <div>
+                        <div class="">
+                            <label for="module" class="form-label">Module:</label>
+                            <select name="module" id="module" class="form-select">
+                                <option value="Unit Verification-Annex VIII-Module G">Annex VIII-Module G</option>
+                                <option
+                                    value="EU-TYPE EXAMINATION FOR LIFTS AND SAFETY COMPONENTS FOR LIFTS-Annex IV-Modul B">
+                                    Annex IV-Modul B</option>
+                                <option
+                                    value="CONFORMITY TO TYPE BASED ON PRODUCT QUALITY ASSURANCE FOR LIFTS-Annex X-Module G">
+                                    Annex X-Module E</option>
+                                <option
+                                    value="CONFORMITY BASED ON FULL QUALITY ASSURANCE PLUS DESIGN EXAMINATION FOR LIFTS-Annex XI-Module G">
+                                    Annex XI-Module H1</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="">
+                            <label for="status" class="form-label">Status</label>
+                            <select name="status" id="status" class="form-select">
+                                <option value="Active">Active</option>
+                                <option value="Passive">Passive</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="">
+                            <label for="standarts" class="form-label">Standarts</label>
+                            <select name="standarts" id="standarts" class="form-select">
+                                <option value="EN81-20:2020,EN81-50:2020">EN81-20:2020,EN81-50:2020</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="product_features" class="form-label">Product Features</label>
+                        <input type="text" name="product_features" id="product_features" class="form-text"
+                            placeholder="Class-I Electric">
+                    </div>
+                    <div class="flex items-center space-x-1">
+                        <div>
+                            <label for="start_date" class="form-label">Effective Start Date</label>
+                            <input type="text" name="start_date" id="start_date" class="form-text"
+                                placeholder="01/02/2025">
+                        </div>
+                        <div>
+                            <label for="expration_date" class="form-label">Expiration Date</label>
+                            <input type="text" name="expration_date" id="expration_date" class="form-text"
+                                placeholder="01/02/2025">
+                        </div>
+                    </div>
+
+                    <div class="flex items-center py-2">
+                        <button type="button" class="btn btn-blue">
+                            Save
+                        </button>
+                        <button type="button" class="btn btn-orange">
+                            Update
+                        </button>
+                        <button type="button" class="btn btn-red">
+                            Delete
+                        </button>
+                        <button type="button" class="btn btn-purple">
+                            Clear
+                        </button>
+                    </div>
+                </form>
+                <div class="">
+
+                    <div class="certqueryqr">
+                        <p>Certificate Page Area:</p>
+                        <hr class="pt-2">
+                    </div>
+
+                </div>
+            </div>
+            <div class="w-3/4 pl-2">
+                <table class="w-full border-collapse border-b border-r border-gray-300">
+                    <thead class="bg-[whitesmoke]">
+                        <tr>
+                            <th class="border-t border-l border-gray-300 px-2 py-1 text-start text-[0.9rem] w-[200px]">
+                                Trade Name
+                            </th>
+                            <th class="border-t border-l border-gray-300 px-2 py-1 text-start text-[0.9rem]">Cert No
+                            </th>
+                            <th class="border-t border-l border-gray-300 px-2 py-1 text-start text-[0.9rem]  w-[200px]">
+                                Module</th>
+                            <th class="border-t border-l border-gray-300 px-2 py-1 text-start text-[0.9rem]">Status</th>
+                            <th class="border-t border-l border-gray-300 px-2 py-1 text-start text-[0.9rem]">Start Date
+                            </th>
+                            <th class="border-t border-l border-gray-300 px-2 py-1 text-start text-[0.9rem]">Expiration
+                                Date</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

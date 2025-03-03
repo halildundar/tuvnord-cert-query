@@ -4,5 +4,3 @@ import tailwindcss from "tailwindcss";
 export default {
   plugins: [autoprefixer, cssnano,tailwindcss],
 };
-
-

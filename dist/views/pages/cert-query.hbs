@@ -1,0 +1,145 @@
+{{> header}}
+
+<div class="bgImageAreaLg">
+    <div class="max-w-[--max-width] mx-auto flex flex-col h-full">
+        <div class="flex-1 flex items-center justify-center">
+            <h2 class="text-[1.6rem] lg:text-[2.4rem] text-white font-bold text-center">Search Certificate</h2>
+        </div>
+        <div class="flex px-2 lg:px-0">
+            <div class="w-full px-5 lg:px-0 lg:w-3/4 lg:mx-auto py-6 lg:py-10 bg-[--tuv-color]">
+                <form class="max-w-lg mx-auto">
+                    <label for="search-txt" class="mb-2 text-sm font-medium text-gray-900 sr-only ">Search</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                            </svg>
+                        </div>
+                        <input type="text" id="search-txt"
+                            class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 "
+                            placeholder="Certificate No" />
+                        <button type="button" id="search-btn"
+                            class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="hidden lg:block h-10"></div>
+    </div>
+</div>
+<div id="docVer" class="hidden lg:max-w-[800px] lg:mx-auto px-5 lg:px-0 py-5">
+    <h2 class="text-[1rem] mb-1 lg:mb-3 lg:text-[1.4rem] font-bold">DOCUMENT VERIFICATION</h2>
+    <table class="hidden border-collapse w-full">
+        <tbody>
+
+        </tbody>
+    </table>
+    <div id="noCert" class=" text-center py-10 text-[1.8rem] lg:text-[3rem] font-bold text-black/40">
+        Not Found
+    </div>
+</div>
+<div class="hidden lg:block">
+    <div class="max-w-[--max-width] mx-auto py-10">
+        <h2 class="text-[2.4rem]">More Information</h2>
+        <hr class="mt-2 border border-gray-300">
+        <div class="w-3/4 mx-auto flex py-10">
+            <div class="w-1/2 pr-10 space-y-4">
+                <img src="https://www.tuv-nord.com/fileadmin/_processed_/b/7/csm_news_d7d837255d.jpg"
+                    class="w-full h-auto" alt="">
+                <h3 class="text-[--tuv-color] font-semibold text-[1.2rem]">Newsletter</h3>
+                <p>
+                    TÜV CYPRUS electronic Newsletter including all latest news...
+                </p>
+                <a class="flex items-center">
+                    <span class="text-[--tuv-color] font-semibold text-[1.2rem]">Read More</span>
+                    <i class="tio text-[--tuv-color] font-semibold text-[1.8rem]">chevron_right</i>
+                </a>
+            </div>
+            <div class="w-1/2 pl-10 space-y-4">
+                <img src="https://www.tuv-nord.com/fileadmin/_processed_/9/6/csm_Presse_90a8a0d90d.jpg"
+                    class="w-full h-auto" alt="">
+                <h3 class="text-[--tuv-color] font-semibold text-[1.2rem]">News And Events</h3>
+                <p>
+                    All current and archived press releases, photos and other publications can be found here...
+                </p>
+                <a class="flex items-center">
+                    <span class="text-[--tuv-color] font-semibold text-[1.2rem]">Read More</span>
+                    <i class="tio text-[--tuv-color] font-semibold text-[1.8rem]">chevron_right</i>
+                </a>
+            </div>
+        </div>
+        <div class="bg-[--tuv-color1] p-10">
+            <div class="flex items-center space-x-4">
+                <button
+                    class="px-5 py-3 bg-[--tuv-color] hover:bg-[--tuv-color1] duration-200 text-white flex items-center">
+                    <i class="tio text-white text-[1.6rem] mr-2">messages</i>
+                    <h3 class="text-[1rem] font-bold">CONTACT</h3>
+                </button>
+                <button
+                    class="px-5 py-3 bg-[--tuv-color] hover:bg-[--tuv-color1] duration-200 text-white flex items-center">
+                    <i class="tio text-white text-[1.6rem] mr-2">email_outlined</i>
+                    <h3 class="text-[1rem] font-bold">SEND MAIL</h3>
+                </button>
+            </div>
+            <div class="text-white py-5">
+                <b>TÜV CYPRUS</b><br>
+
+                Papaflessa 2, 2235 Latsia, Nicosia, Cyprus<br>
+                P.O.Box: 20732, 1663 Nicosia, Cyprus<br><br><a href="tel:+357 22442840" class="PT34006">Tel.: +357
+                    22442840</a><br>
+                Fax: +357 22442850<br><a href="mailto:info@tuvcyprus.com.cy"
+                    class="PT12006">info@tuvcyprus.com.cy</a><br>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="lg:hidden">
+    <div class="grid grid-cols-2 gap-5 p-5 pb-0">
+        <a class="text-white flex flex-col items-center justify-center  h-[105px] bg-[--tuv-color] p-4">
+            <i class="tio text-[2rem]">home</i>
+            <span class="font-bold ">OUR COMPANY</span>
+        </a>
+        <a class="text-white flex flex-col items-center justify-center  h-[105px] bg-[--tuv-color] p-4">
+            <i class="tio text-[2rem]">star</i>
+            <span class="font-bold ">OUR SERVICES</span>
+        </a>
+        <a class="text-white flex flex-col items-center justify-center  h-[105px] bg-[--tuv-color] p-4">
+            <i class="tio text-[2rem]">group_equal</i>
+            <span class="font-bold ">CAREER</span>
+        </a>
+        <a class="text-white flex flex-col items-center justify-center  h-[105px] bg-[--tuv-color] p-4">
+            <i class="tio text-[2rem]">feed</i>
+            <span class="font-bold ">NEWS & EVENTS</span>
+        </a>
+    </div>
+</div>
+<div class="lg:hidden">
+    <div class="p-5 ">
+        <div class="p-5 py-10 bg-[--tuv-color1] text-white">
+            <span>TÜV CYPRUS</span><b>TÜV CYPRUS</b><br>
+
+            Papaflessa 2, 2235 Latsia, Nicosia, Cyprus<br>
+            P.O.Box: 20732, 1663 Nicosia, Cyprus<br><br><a href="tel:+357 22442840" class="PT34006">Tel.: +357
+                22442840</a><br>
+            Fax: +357 22442850<br><a href="mailto:info@tuvcyprus.com.cy" class="PT12006">info@tuvcyprus.com.cy</a><br>
+
+            <div class="flex flex-col space-y-2 pt-5">
+                <a class="px-5 py-3 text-white bg-[--tuv-color] flex items-center " rel="nofollow"
+                    href="https://www.tuv-nord.com/cy/en/contact-me/cid/875/">
+                    <i class="tio text-white text-[1.6rem] mr-2">call</i>
+                    Contact
+                </a>
+                <a href="mailto:info@tuvcyprus.com.cy" class="px-5 py-3 text-white bg-[--tuv-color] flex items-center">
+                    <i class="tio text-white text-[1.6rem]  mr-2">email</i>
+
+                    Send mail
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+{{>footer}}

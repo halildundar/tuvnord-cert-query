@@ -24,3 +24,22 @@ CREATE TABLE IF NOT EXISTS `firmalar`(
 `vergi_no` VARCHAR(255),
 `user_id` INT(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `certs`(
+`id` INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+`trade_name` VARCHAR(255) NOT NULL,
+`legislation` VARCHAR(255) NOT NULL,
+`product_range` VARCHAR(255),
+`module` VARCHAR(255),
+`status` VARCHAR(255),
+`standarts` VARCHAR(50) NOT NULL,
+`product_features` VARCHAR(50) NOT NULL,
+`start_date` VARCHAR(100) NOT NULL,
+`expration_date` VARCHAR(255) NOT NULL,
+`release_date` VARCHAR(255),
+`registration_deadline` VARCHAR(255),
+`cert_no` VARCHAR(255),
+`cert_id` INT(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `certs`( `id` INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT, `cert_no` VARCHAR(255), `trade_name` VARCHAR(255) NOT NULL, `legislation` VARCHAR(255) NOT NULL, `product_range` VARCHAR(255), `module` VARCHAR(255), `status` VARCHAR(255), `standarts` VARCHAR(50) NOT NULL, `product_features` VARCHAR(50) NOT NULL, `start_date` VARCHAR(100) NOT NULL, `expration_date` VARCHAR(255) NOT NULL,`cert_id` VARCHAR(255) ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -1,19 +1,64 @@
-<header class="bg-[--tvclr]">
-  <nav class="max-w-[1200px] mx-auto px-4 py-4">
-    <div class="flex items-center">
-      <div class="w-[50%] xl:w-[20%] pr-4">
-        <a href="/" title="TUV Turkey" target="_self" class="">
-          <img src="/assets/tuvlogo-white.svg" alt="TUV Turkey" class="" />
+<header>
+  <div class="lg:hidden relative w-full h-[250px] bgImageMobile">
+    {{!-- <img class="absolute top-0 left-0 object-cover w-full h-full"
+      src="https://www.tuv-nord.com/typo3temp/focuscrop/ccb985414cfd81627d441a986ad31970790b2386-fp-9-5-0-0.jpg" alt="">
+    --}}
+    <div class="relative z-10 px-4">
+      <div class="flex items-start justify-between">
+        <a href="/cy/en/home/" title="TUEV Cyprus" target="_self"
+          class="w-[200px] h-[85px] bg-[--tuv-color] flex flex-col justify-end p-2">
+          <img src="https://www.tuv-nord.com/Resources/Public/Media/TN/TUEV-NORD_Logo_White_sRGB.svg" alt="TUEV Cyprus"
+            class="w-full h-auto">
+        </a>
+
+        <a href="" class="tio p-2 flex items-center justify-center text-[2.4rem] text-white bg-[--tuv-color]">
+          menu_hamburger
         </a>
       </div>
-      <div class="flex justify-end items-center flex-1 xl:hidden">
-        <button class="tio p-2 text-[2rem] text-white rounded-full">
-          menu_hamburger
-        </button>
-      </div>
-      <div class="hidden xl:flex xl:flex-1 text-center justify-end items-center">
-        {{!-- Desktop Menü --}}
+    </div>
+    <h2 class="p-4 text-white text-[1.6rem] font-bold">TÜV CYPRUS</h2>
+  </div>
+  <div class="hidden lg:block bg-white">
+    <div class="flex items-start  max-w-[--max-width] mx-auto ">
+      <a href="/cy/en/home/" title="TÜV Cyprus" target="_self"
+        class="w-[200px] h-[85px] bg-[--tuv-color] flex flex-col justify-end p-2">
+        <img src="https://www.tuv-nord.com/Resources/Public/Media/TN/TUEV-NORD_Logo_White_sRGB.svg" alt="TÜV Cyprus"
+          class="w-full h-auto">
+      </a>
+      <div class="flex-1"></div>
+      <div class="flex items-center space-x-2  pb-5 pt-10">
+        <a href="/cy/en/home/" title="TÜV Cyprus" target="_self" class="p-2">
+          NEWSLETTER
+        </a>
+        <a href="/cy/en/home/" title="TÜV Cyprus" target="_self" class="p-2">
+          CONTACT
+        </a>
+         <a href="/cy/en/home/" title="TÜV Cyprus" target="_self" class="p-2 bg-red-700 hover:bg-red-600 duration-200 text-white pr-3 flex items-center">
+          <i class="tio text-white text-[1.2rem] mr-1">search</i>
+          Certificate Query
+        </a>
+        <a href="" class="tio p-2 flex items-center justify-center text-[1.4rem] text-white bg-[--tuv-color]">
+          search
+        </a>
       </div>
     </div>
-  </nav>
+    <div class="pt-4">
+      <div class="bg-[--tuv-color]">
+        <div class="max-w-[--max-width] mx-auto flex items-center">
+          <a href="" class="block h-full w-1/4 px-5 py-3 font-semibold text-white hover:bg-[--tuv-color1] duration-150 text-center">
+            Our Company
+          </a>
+          <a href="" class="block h-full w-1/4 px-5 py-3 font-semibold text-white hover:bg-[--tuv-color1] duration-150 text-center">
+            Our Services
+          </a>
+          <a href="" class="block h-full w-1/4 px-5 py-3 font-semibold text-white hover:bg-[--tuv-color1] duration-150 text-center">
+            Career
+          </a>
+          <a href="" class="block h-full w-1/4 px-5 py-3 font-semibold text-white hover:bg-[--tuv-color1] duration-150 text-center">
+            NEWS AND EVENTS
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </header>

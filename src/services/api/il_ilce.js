@@ -1,6 +1,6 @@
 import fs from 'fs';
 import {resolve} from 'path';
-import { QueryGeneral } from '../db/mysql.js';
+import { QueryGeneral } from '../mysql.js';
 export let AdresRoutes = (router) => {
   router.post("/adres/iller", GetIller);
   router.post("/adres/ilceler", GetIlcelerFromIlId);
