@@ -10,8 +10,8 @@ $(document).ready(function () {
     $("script[src='/ctrl-panel/main.js']").before(
       "<script src='https://www.google.com/recaptcha/api.js?render=6Lf2FrEqAAAAAEc8D39aAZOsihEZATb-UUOHCzc8'></script>"
     );
-    $("#email").val("halildundar.eee@gmail.com");
-    $("#passw").val("153ud153");
+    // $("#email").val("halildundar.eee@gmail.com");
+    // $("#passw").val("153ud153");
   
     $(".eyeStatus").click(function(e){
       e.preventDefault();
