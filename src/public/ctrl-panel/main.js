@@ -3,8 +3,6 @@ import { InitPage } from "./router.js";
 
 $(document).ready(function () {
   const currPath = window.location.pathname;
-  // console.log(currPath)
-  // GoToPage(currPath, "#root_view", {});
   InitPage();
   if(currPath == '/ctrl-panel/login'){
     $("script[src='/ctrl-panel/main.js']").before(
