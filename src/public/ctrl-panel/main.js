@@ -1,4 +1,5 @@
 import "./main.scss";
+import "./jqform-serialize.js";
 import { InitPage } from "./router.js";
 
 $(document).ready(function () {

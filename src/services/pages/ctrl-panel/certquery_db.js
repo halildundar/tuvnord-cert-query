@@ -32,8 +32,10 @@ export let saveCert = async (queryData) => {
     const hashDigest = cryptojs.enc.Hex.stringify(
       cryptojs.MD5(queryData.cert_no + "tüvartdoksan")
     );
-    queryData = [...queryData, hashDigest];
-    const rows = await Query("INSERT INTO `certs` VALUES (0,?)", [queryData]);
+    queryData = {
+      ...queryData,  cert_id: hashDigest
+    };
+    const rows = await Query("INSERT INTO `certs` SET ?", [queryData]);
     return rows;
   } catch (error) {
     console.log(error);

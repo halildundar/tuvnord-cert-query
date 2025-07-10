@@ -205,7 +205,7 @@ const UsersAreaJS = () => {
 
 const CertQueryAreaJS = () => {
   let selectedCert = null;
-  const sitename = "https://nervous-herschel.89-250-72-218.plesk.page/"; //https://nervous-herschel.89-250-72-218.plesk.page/, "http://localhost:3000/"
+  const sitename = process.env.NODE_ENV == 'development' ? "http://localhost:3000/":"https://nervous-herschel.89-250-72-218.plesk.page/"; //https://nervous-herschel.89-250-72-218.plesk.page/, "http://localhost:3000/"
   const pathname = window.location.pathname;
   const GetQR = async (text, name) => {
     const resp = await $.ajax({
@@ -223,6 +223,7 @@ const CertQueryAreaJS = () => {
     $(".certqueryqr").append(data["imgEl"]);
   };
   const SelectedCertQr = async (cert_id) => {
+    console.log(cert_id);
     const data = await GetQR(sitename + "cert-query/?cqn=" + cert_id, cert_id);
     $(".selectedcertqueryqr").removeClass("hidden");
     $(".selectedcertqueryqr img").remove();
@@ -299,6 +300,7 @@ const CertQueryAreaJS = () => {
       contentType: "application/json",
       success: function (response) {
         const { certs } = response;
+        console.log(certs);
         if (!!certs) {
           $("table tbody").html("");
           $.map(certs, function (cert, index) {
@@ -372,10 +374,8 @@ const CertQueryAreaJS = () => {
       onDelete({ id: selectedCert.id });
     });
     $(".btn-blue").click(function (e) {
-      let formData = [];
-      $.map($("form").serializeArray(), function (item) {
-        formData.push(item.value);
-      });
+      const formData = $("form").serializeJSON();
+      console.log(formData)
       onSave({ queryData: formData });
     });
     CertificateSorguImgArea();

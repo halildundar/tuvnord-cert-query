@@ -13,7 +13,9 @@ let dbConfig = {
   idleTimeoutMillis: 30000,
   connectionTimeoutMillis: 2000,
 };
-export const pool = mysql.createPool(dbConfig);
+let dbConfigLocal = {...dbConfig,user:'root',password:''}
+let config1 = process.env.NODE_ENV == 'development' ? dbConfigLocal : dbConfig;
+export const pool = mysql.createPool(config1);
 export const Connection = () => {
   return new Promise((resolve, reject) => {
     pool.getConnection((err, connection) => {
