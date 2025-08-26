@@ -42,7 +42,6 @@ const IsAuthGet = (routePath) => {
     contentType: "application/json",
     dataType: "json",
     success: function (response) {
-      console.log("response", response);
       // GoToPage(route.path, route.viewId, route.data);
       if (!!response) {
         User = response;
@@ -71,7 +70,6 @@ const GetBtnRoutes = () => {
   });
 };
 const IfUserActiveForDom = () => {
-  console.log(User);
   if (!User) {
     $(".login").each(function (index) {
       $(this).removeClass("flex");
@@ -205,7 +203,7 @@ const UsersAreaJS = () => {
 
 const CertQueryAreaJS = () => {
   let selectedCert = null;
-  const sitename = process.env.NODE_ENV == 'development' ? "http://localhost:3000/":"https://nervous-herschel.89-250-72-218.plesk.page/"; //https://nervous-herschel.89-250-72-218.plesk.page/, "http://localhost:3000/"
+  const sitename = process.env.NODE_ENV == 'development' ? "http://localhost:3000/":"https://tuvcyprus.com/"; //https://nervous-herschel.89-250-72-218.plesk.page/, "http://localhost:3000/"
   const pathname = window.location.pathname;
   const GetQR = async (text, name) => {
     const resp = await $.ajax({
@@ -223,7 +221,6 @@ const CertQueryAreaJS = () => {
     $(".certqueryqr").append(data["imgEl"]);
   };
   const SelectedCertQr = async (cert_id) => {
-    console.log(cert_id);
     const data = await GetQR(sitename + "cert-query/?cqn=" + cert_id, cert_id);
     $(".selectedcertqueryqr").removeClass("hidden");
     $(".selectedcertqueryqr img").remove();
@@ -274,7 +271,6 @@ const CertQueryAreaJS = () => {
       dataType: "json",
       contentType: "application/json",
       success: function (response) {
-        console.log(response);
         onGetCerts();
       },
     });
@@ -300,7 +296,6 @@ const CertQueryAreaJS = () => {
       contentType: "application/json",
       success: function (response) {
         const { certs } = response;
-        console.log(certs);
         if (!!certs) {
           $("table tbody").html("");
           $.map(certs, function (cert, index) {
@@ -359,8 +354,8 @@ const CertQueryAreaJS = () => {
   };
   if (pathname === "/ctrl-panel/certificates") {
     onGetCerts();
-    $(".btn-purple").click(onClear);
-    $(".btn-orange").click(function (e) {
+    $(".btn-purple").on("click",onClear);
+    $(".btn-orange").on("click",function (e) {
       let formData = {};
       $.map($("form").serializeArray(), function (item) {
         formData[item.name] = item.value;
@@ -370,12 +365,11 @@ const CertQueryAreaJS = () => {
         queryData: { ...formData, cert_id: selectedCert.cert_id },
       });
     });
-    $(".btn-red").click(function (e) {
+    $(".btn-red").on("click",function (e) {
       onDelete({ id: selectedCert.id });
     });
-    $(".btn-blue").click(function (e) {
+    $(".btn-blue").on("click",function (e) {
       const formData = $("form").serializeJSON();
-      console.log(formData)
       onSave({ queryData: formData });
     });
     CertificateSorguImgArea();

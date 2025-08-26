@@ -12,7 +12,7 @@ $(document).ready(function () {
     // $("#email").val("halildundar.eee@gmail.com");
     // $("#passw").val("153ud153");
   
-    $(".eyeStatus").click(function(e){
+    $(".eyeStatus").on('click',function(e){
       e.preventDefault();
       if($(".eyeStatus i").html() == 'hidden'){
         $(".eyeStatus i").html('visible');
@@ -32,7 +32,7 @@ $(document).ready(function () {
           grecaptcha
             .execute("6Lf2FrEqAAAAAEc8D39aAZOsihEZATb-UUOHCzc8")
             .then(function (token) {
-              $("#sendbtn").click(function () {
+              $("#sendbtn").on('click',function () {
                 var email = $("#email").val();
                 var passw = $("#passw").val();
   
@@ -44,7 +44,6 @@ $(document).ready(function () {
                   passw,
                   recaptchaToken: token,
                 });
-                console.log(sendedData);
                 $.ajax({
                   type: "post",
                   url: "/ctrl-panel/login",
@@ -52,7 +51,6 @@ $(document).ready(function () {
                   contentType: "application/json; charset=utf-8",
                   dataType: "json",
                   success: (data) => {
-                    console.log(data);
                     const { ok} = data;
                     if(ok){
                       window.location.pathname = "/ctrl-panel/";
@@ -78,6 +76,5 @@ $(document).ready(function () {
       }
     }, 500);
     const FormData = $("form").serializeArray();
-    console.log(FormData);
   }
 });
